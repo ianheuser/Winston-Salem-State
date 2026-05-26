@@ -129,8 +129,9 @@ select {
   position: absolute;
   z-index: 19;
   top: 122px;
+  left: 0;
   right: 0;
-  width: min(100%, 393px);
+  width: 100%;
   padding: 42px 32px;
   background: var(--black);
   color: var(--white);
