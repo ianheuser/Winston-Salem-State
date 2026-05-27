@@ -61,10 +61,11 @@ select {
 }
 
 .brand {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 14px;
   width: clamp(220px, 28vw, 402px);
-  justify-items: start;
 }
 
 .brand-mark {
@@ -179,6 +180,8 @@ select {
 
 .program-finder {
   position: relative;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   padding: 76px 0 72px;
   background:
@@ -186,6 +189,17 @@ select {
     var(--black);
   color: var(--white);
   text-align: center;
+}
+
+.program-finder .section-inner,
+.aid-band .section-inner,
+.career-paths .section-inner,
+.lead-room-section .section-inner,
+.affordability-section .section-inner,
+.serve-section .section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .program-finder h2 {
@@ -198,15 +212,19 @@ select {
 }
 
 .program-type-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: clamp(34px, 5.8vw, 92px);
 }
 
 .program-type {
-  display: grid;
+  display: flex;
+  flex: 1 1 280px;
+  flex-direction: column;
+  align-items: center;
   gap: 16px;
-  justify-items: center;
   min-height: 148px;
 }
 
@@ -304,10 +322,19 @@ select {
 .inquiry-grid {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: minmax(340px, 521px) minmax(390px, 561px);
-  gap: clamp(58px, 8vw, 112px);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(58px, 8vw, 112px);
+}
+
+.inquiry-grid .photo-card {
+  flex: 0 1 521px;
+}
+
+.inquiry-grid .inquiry-copy {
+  flex: 0 1 561px;
 }
 
 .photo-card {
@@ -349,12 +376,14 @@ select {
 }
 
 .lead-form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
 .lead-form label {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 4px;
   color: var(--muted);
   font-family: "IBM Plex Sans", sans-serif;
@@ -382,7 +411,7 @@ select {
 }
 
 .outline-button {
-  justify-self: center;
+  align-self: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -421,6 +450,8 @@ select {
 }
 
 .aid-band {
+  display: flex;
+  justify-content: center;
   padding: 74px 0 82px;
   background: var(--red);
   color: var(--white);
@@ -445,6 +476,8 @@ select {
 
 .power-section {
   position: relative;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   padding: 138px 0 150px;
   background:
@@ -456,6 +489,9 @@ select {
 
 .power-inner {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-height: 1140px;
 }
 
@@ -544,16 +580,18 @@ select {
 }
 
 .dean-quote {
+  display: flex;
+  justify-content: center;
   padding: 92px 0;
   background: var(--red-bright);
   color: var(--white);
 }
 
 .quote-grid {
-  display: grid;
-  grid-template-columns: 370px 1fr;
+  display: flex;
   gap: clamp(64px, 9vw, 130px);
   align-items: center;
+  justify-content: center;
 }
 
 .quote-grid img {
@@ -566,6 +604,7 @@ select {
 }
 
 .quote-grid blockquote {
+  flex: 1 1 520px;
   margin: 0;
   text-align: center;
 }
@@ -585,8 +624,9 @@ select {
 }
 
 .site-footer {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 16px;
   padding: 62px 24px 36px;
   background: var(--black);
@@ -596,8 +636,9 @@ select {
 }
 
 .footer-brand {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 9px;
   width: 312px;
 }
@@ -632,8 +673,9 @@ select {
 }
 
 .social-links a {
-  display: inline-grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 69px;
   height: 69px;
   border: 2px solid var(--red);
@@ -647,47 +689,35 @@ select {
 
 .program-hero {
   position: relative;
-  min-height: 500px;
+  min-height: clamp(500px, 49vw, 702px);
   overflow: hidden;
   background: var(--black);
   color: var(--white);
   display: flex;
   flex-direction: row;
+  align-items: stretch;
 }
 
 .program-hero-image {
-  display: flex;
+  flex: 1 1 52%;
   background: url("assets/program-hero.jpg") center / cover no-repeat;
-    width: 100%;
+  min-height: inherit;
 }
 
 .program-hero-content {
   position: relative;
   z-index: 1;
   display: flex;
+  flex: 1 1 48%;
   flex-direction: column;
-  min-height: 50vw;
-  max-height: 600px;
-  width: 100%;
-  align-items: self-start;
+  min-height: inherit;
+  align-items: flex-start;
   justify-content: center;
   padding-left: 3%;
   padding-right: 3%;
 }
 
-.program-code {
-  display: inline-grid;
-  place-items: center;
-  width: 188px;
-  height: 188px;
-  margin: 0 0 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--gold);
-  font-size: 43px;
-  font-weight: 800;
-  text-align: center;
-}
+
 
 
 
@@ -730,6 +760,8 @@ select {
 }
 
 .program-intro {
+  align-items: center;
+  justify-content: center;
   padding: 60px 0 68px;
   background: var(--red);
   color: var(--white);
@@ -753,7 +785,24 @@ select {
 }
 
 .inquiry-section-program {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(58px, 8vw, 112px);
   padding-top: 126px;
+  padding-inline: 24px;
+}
+
+.inquiry-section-program .image-container {
+  position: relative;
+  z-index: 2;
+  flex: 0 1 521px;
+}
+
+.inquiry-section-program .form-container {
+  position: relative;
+  z-index: 2;
+  flex: 0 1 561px;
 }
 
 .inquiry-section-program .campus-left {
@@ -763,8 +812,13 @@ select {
 }
 
 .innovators-section {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(60px, 8vw, 110px);
   overflow: hidden;
   padding: 132px 0 136px;
+  padding-inline: 24px;
   background:
     radial-gradient(circle at 58% 54%, rgba(255, 38, 61, 0.72) 0 12%, rgba(255, 38, 61, 0.24) 22%, rgba(0, 0, 0, 0) 34%),
     var(--black);
@@ -772,14 +826,21 @@ select {
 }
 
 .innovators-grid {
-  display: grid;
-  grid-template-columns: minmax(350px, 1fr) minmax(420px, 580px);
-  gap: clamp(60px, 8vw, 110px);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(60px, 8vw, 110px);
 }
 
 .innovators-copy {
+  flex: 0 1 520px;
+  align-items: center;
   text-align: center;
+}
+
+.innovators-section .photo-card {
+  flex: 0 1 580px;
 }
 
 .innovators-copy h2 {
@@ -794,7 +855,8 @@ select {
 }
 
 .innovators-copy ul {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 18px;
   margin: 0;
   padding: 0;
@@ -804,6 +866,7 @@ select {
 }
 
 .career-paths {
+  justify-content: center;
   padding: 96px 0 112px;
   background: var(--white);
   text-align: center;
@@ -819,7 +882,8 @@ select {
 }
 
 .career-paths ul {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 19px;
   margin: 0;
   padding: 0;
@@ -838,6 +902,7 @@ select {
 }
 
 .stats-band {
+  justify-content: center;
   padding: 62px 0 66px;
   background: var(--black);
   color: var(--white);
@@ -845,9 +910,15 @@ select {
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 58px;
+}
+
+.stats-grid > div {
+  flex: 1 1 260px;
 }
 
 .stats-grid strong {
@@ -870,6 +941,8 @@ select {
 
 .lead-room-section {
   position: relative;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
   padding: 120px 0 0;
   background: linear-gradient(180deg, var(--gold) 0%, var(--gold) 54%, rgba(215, 168, 14, 0.36) 74%, rgba(215, 168, 14, 0) 100%);
@@ -900,6 +973,9 @@ select {
 }
 
 .affordability-section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 106px 0 118px;
   background: var(--black);
   color: var(--white);
@@ -926,6 +1002,9 @@ select {
 }
 
 .serve-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 104px 0 126px;
   background: var(--white);
   text-align: center;
@@ -951,7 +1030,28 @@ select {
   line-height: 1.05;
 }
 
+
+.program-code {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.86);
+    color: var(--gold);
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    DISPLAY: INLINE-FLEX;
+    JUSTIFY-CONTENT: CENTER;
+    ALIGN-ITEMS: end;
+    padding-bottom: 10px;
+    position: absolute;
+    top: -48px;
+    left: -33px;
+}
+
 @media (max-width: 980px) {
+  /* These only apply to screens 980px or less */
+
   .site-header {
     min-height: 122px;
     padding: 26px 28px 24px;
@@ -986,7 +1086,8 @@ select {
   .inquiry-grid,
   .innovators-grid,
   .quote-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
 
   .inquiry-grid,
@@ -1000,7 +1101,6 @@ select {
   }
 
   .quote-grid {
-    justify-items: center;
     text-align: center;
   }
 
@@ -1016,6 +1116,8 @@ select {
 }
 
 @media (max-width: 720px) {
+/* When the screen is 720px or less, the below apply */
+
   .section-inner {
     width: min(100% - 28px, 393px);
   }
@@ -1024,9 +1126,10 @@ select {
     min-height: 271px;
   }
 
-  .hero-art {
+  .program-hero-image {
     background-position: center;
   }
+  
 
   .program-finder {
     padding: 32px 0 30px;
@@ -1201,8 +1304,7 @@ select {
   }
 
   .quote-grid {
-    display: grid;
-    grid-template-columns: 130px 1fr;
+    flex-direction: row;
     gap: 14px;
     align-items: center;
   }
@@ -1257,6 +1359,19 @@ select {
   .program-hero {
     min-height: 216px;
   }
+
+  .program-hero-image {
+    flex-basis: 52%;
+    min-height: 216px;
+    background-position: 35% 18%;
+  }
+
+  .program-hero-content {
+    flex-basis: 48%;
+    min-height: 216px;
+    padding: 22px 14px;
+  }
+
 
   .program-hero h1 {
     margin-bottom: 12px;
@@ -1336,8 +1451,12 @@ select {
   }
 
   .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
     gap: 8px;
+  }
+
+  .stats-grid > div {
+    flex-basis: 0;
   }
 
   .stats-grid strong {
