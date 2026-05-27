@@ -647,39 +647,32 @@ select {
 
 .program-hero {
   position: relative;
-  min-height: 702px;
+  min-height: 500px;
   overflow: hidden;
   background: var(--black);
   color: var(--white);
-}
-
-.program-hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5px;
-  background: var(--gold);
+  display: flex;
+  flex-direction: row;
 }
 
 .program-hero-image {
-  position: absolute;
-  inset: 0 45% 0 0;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.58)),
-    url("assets/program-hero.jpg") center / cover no-repeat;
+  display: flex;
+  background: url("assets/program-hero.jpg") center / cover no-repeat;
+    width: 100%;
 }
 
 .program-hero-content {
   position: relative;
   z-index: 1;
-  display: grid;
-  align-content: center;
-  width: min(34%, 520px);
-  min-height: 702px;
-  margin-left: 60%;
-  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vw;
+  max-height: 600px;
+  width: 100%;
+  align-items: self-start;
+  justify-content: center;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .program-code {
@@ -694,6 +687,18 @@ select {
   font-size: 43px;
   font-weight: 800;
   text-align: center;
+}
+
+
+
+.program-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: var(--gold);
 }
 
 .program-hero h1 {
@@ -713,6 +718,15 @@ select {
   font-weight: 700;
   line-height: 1.15;
   text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.column {
+  flex-direction: column;
 }
 
 .program-intro {
@@ -998,14 +1012,7 @@ select {
     gap: 24px;
   }
 
-  .program-hero-image {
-    inset: 0 44% 0 0;
-  }
 
-  .program-hero-content {
-    width: 42%;
-    margin-left: 58%;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1249,25 +1256,6 @@ select {
 
   .program-hero {
     min-height: 216px;
-  }
-
-  .program-hero-image {
-    inset: 0 47% 0 0;
-    background-position: 35% 18%;
-  }
-
-  .program-hero-content {
-    width: 40%;
-    min-height: 216px;
-    margin-left: 60%;
-    padding: 22px 0;
-  }
-
-  .program-code {
-    width: 66px;
-    height: 66px;
-    margin: -50px 0 14px -72px;
-    font-size: 15px;
   }
 
   .program-hero h1 {
