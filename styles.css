@@ -1102,7 +1102,7 @@ select {
     0 0 4px currentColor,
     0 0 12px currentColor,
     0 0 26px currentColor;
-  animation: neon-flicker 1.65s linear var(--neon-delay, 0ms) 1 both;
+  animation: neon-flicker 1.65s linear 1 both;
 }
 
 .neon-button,
@@ -1115,9 +1115,7 @@ select {
 .neon-button:hover,
 .neon-button:focus-visible,
 .outline-button:hover,
-.outline-button:focus-visible,
-.nav-contact:hover,
-.nav-contact:focus-visible {
+.outline-button:focus-visible {
   text-shadow:
     0 0 4px currentColor,
     0 0 12px currentColor,
@@ -1126,43 +1124,6 @@ select {
     0 0 10px currentColor,
     inset 0 0 8px currentColor;
   animation: neon-flicker 1.15s linear 1 both;
-}
-
-.desktop-nav a:nth-child(2),
-.mobile-nav a:nth-child(2),
-.inquiry-copy h2 {
-  --neon-delay: 620ms;
-}
-
-.desktop-nav a:nth-child(3),
-.mobile-nav a:nth-child(3),
-.aid-band h2,
-.lead-room-section h2 {
-  --neon-delay: 1.15s;
-}
-
-.power-points li:nth-child(1) {
-  --neon-delay: 0ms;
-}
-
-.power-points li:nth-child(2) {
-  --neon-delay: 180ms;
-}
-
-.power-points li:nth-child(3) {
-  --neon-delay: 360ms;
-}
-
-.power-points li:nth-child(4) {
-  --neon-delay: 540ms;
-}
-
-.power-points li:nth-child(5) {
-  --neon-delay: 720ms;
-}
-
-.program-code {
-  --neon-delay: 420ms;
 }
 
 @keyframes neon-flicker {
@@ -1205,8 +1166,6 @@ select {
   .neon-button:focus-visible,
   .outline-button:hover,
   .outline-button:focus-visible,
-  .nav-contact:hover,
-  .nav-contact:focus-visible,
   .neon-on-scroll.neon-lit {
     animation: none;
     transition: none;

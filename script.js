@@ -2,8 +2,6 @@ const menuButton = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector(".mobile-nav");
 
 const neonScrollSelectors = [
-  ".desktop-nav a:not(.nav-contact)",
-  ".mobile-nav a",
   ".program-finder h2",
   ".inquiry-copy h2",
   ".aid-band h2",
@@ -20,26 +18,75 @@ const neonScrollSelectors = [
   ".serve-section h2",
 ].join(",");
 
-// Neon text waits until it is meaningfully in view before doing its one-time flicker-on animation.
+// Neon text flickers on once, as soon as it first enters the viewport.
 const neonTargets = document.querySelectorAll(neonScrollSelectors);
+let neonObserver;
+let lastNeonViewportTop = window.scrollY;
 
 neonTargets.forEach((target) => {
   target.classList.add("neon-on-scroll");
 });
 
+const lightNeonTarget = (target) => {
+  target.classList.add("neon-lit");
+
+  if (neonObserver) {
+    neonObserver.unobserve(target);
+  }
+};
+
+// The scroll fallback catches fast scrolls that pass over short neon elements between observer checks.
+const revealNeonTargetsInRange = (rangeTop, rangeBottom) => {
+  neonTargets.forEach((target) => {
+    if (target.classList.contains("neon-lit")) {
+      return;
+    }
+
+    const rect = target.getBoundingClientRect();
+    const targetTop = rect.top + window.scrollY;
+    const targetBottom = targetTop + rect.height;
+
+    if (targetBottom > rangeTop && targetTop < rangeBottom) {
+      lightNeonTarget(target);
+    }
+  });
+};
+
+const checkNeonViewport = () => {
+  const currentTop = window.scrollY;
+  const currentBottom = currentTop + window.innerHeight;
+  const rangeTop = Math.min(lastNeonViewportTop, currentTop);
+  const rangeBottom = Math.max(lastNeonViewportTop + window.innerHeight, currentBottom);
+
+  revealNeonTargetsInRange(rangeTop, rangeBottom);
+  lastNeonViewportTop = currentTop;
+};
+
+let neonScrollFrame;
+const scheduleNeonViewportCheck = () => {
+  if (neonScrollFrame) {
+    return;
+  }
+
+  neonScrollFrame = window.requestAnimationFrame(() => {
+    neonScrollFrame = null;
+    checkNeonViewport();
+  });
+};
+
 if ("IntersectionObserver" in window) {
-  const neonObserver = new IntersectionObserver(
+  neonObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("neon-lit");
+          lightNeonTarget(entry.target);
           observer.unobserve(entry.target);
         }
       });
     },
     {
-      rootMargin: "0px 0px -22% 0px",
-      threshold: 0.25,
+      rootMargin: "0px",
+      threshold: 0,
     },
   );
 
@@ -47,9 +94,13 @@ if ("IntersectionObserver" in window) {
 } else {
   // Older browsers still get the finished glow, just without the scroll-triggered timing.
   neonTargets.forEach((target) => {
-    target.classList.add("neon-lit");
+    lightNeonTarget(target);
   });
 }
+
+window.addEventListener("scroll", scheduleNeonViewportCheck, { passive: true });
+window.addEventListener("resize", scheduleNeonViewportCheck);
+window.requestAnimationFrame(checkNeonViewport);
 
 // Only wire up the mobile menu if the current page includes both menu elements.
 if (menuButton && mobileNav) {
