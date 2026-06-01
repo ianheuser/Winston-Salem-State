@@ -1372,7 +1372,10 @@ select {
 
 @media (max-width: 720px) {
 /* When the screen is 720px or less, the below apply */
-
+  
+  .inquiry-section-landing > .inquiry-copy {
+    flex: 0 1 fit-content;
+  }
 
   .footer-brand {
     display: flex;
