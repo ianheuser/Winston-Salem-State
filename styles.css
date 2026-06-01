@@ -364,9 +364,8 @@ select {
 .inquiry-section-landing {
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: clamp(58px, 8vw, 112px);
-  padding: 108px 24px 190px;
+  gap: 4vw;
+  padding: 108px 24px 140px;
 }
 
 .inquiry-section-landing::after {
@@ -409,28 +408,41 @@ select {
 }
 
 .inquiry-section-landing > .inquiry-copy {
-  flex: 0 1 fit-content;
-}
-
-.photo-card {
-  overflow: hidden;
-  background: var(--black);
+  flex: 0 1 600px;
 }
 
 .photo-card img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
 }
 
-.photo-card-red {
+.photo-card {
   aspect-ratio: 521 / 613;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-card-red img {
   border: 7px solid var(--red);
   border-radius: 25px;
+  z-index: 2;
+  position: relative;
+}
+
+.red-line {
+    width: 10px;
+    height: 100%;
+    background-color: var(--red);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-5px);
+    bottom: -90%;
 }
 
 .inquiry-copy {
   text-align: center;
+  align-items: center;
 }
 
 .inquiry-copy h2 {
@@ -444,16 +456,18 @@ select {
 }
 
 .inquiry-copy > p {
-  max-width: 560px;
+  max-width: 90%;
   margin: 0 auto 44px;
   font-size: clamp(16px, 1.8vw, 23px);
   line-height: 1.35;
+  width: 90%;
 }
 
 .lead-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 90%;
 }
 
 .lead-form label {
@@ -1338,8 +1352,7 @@ select {
   }
 
   .photo-card-red {
-    width: min(100%, 520px);
-    margin-inline: auto;
+    display: none;
   }
 
   .dean-quote {
