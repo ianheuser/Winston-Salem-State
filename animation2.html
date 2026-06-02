@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="animation-proof-page">
-    <div class="sizer" aria-hidden="true"></div>
 
     <section class="path-proof-section" id="ram-path-proof" aria-label="Ram path animation proof">
+
+      <h1>The Power of AWSSU Graduate Degree</h1>
+
       <svg
         class="path-proof-svg"
         viewBox="-120 -140 1263 2380"
@@ -76,6 +78,8 @@
       const pathBullets = Array.from(document.querySelectorAll(".path-proof-bullet"));
       const duration = 8000;
       let animationStart = null;
+      let animationStarted = false;
+      let startCheckFrame = null;
 
       const updateBulletLights = (progress) => {
         pathBullets.forEach((bullet) => {
@@ -104,9 +108,53 @@
         window.requestAnimationFrame(animateRam);
       };
 
+      const startRamAnimation = () => {
+        if (animationStarted) {
+          return;
+        }
+
+        animationStarted = true;
+        animationStart = null;
+        window.requestAnimationFrame(animateRam);
+      };
+
+      const checkRamAnimationStart = () => {
+        if (animationStarted) {
+          return;
+        }
+
+        const section = document.querySelector(".path-proof-section");
+
+        if (!section) {
+          return;
+        }
+
+        const sectionRect = section.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 0.5;
+
+        if (sectionRect.top <= triggerPoint && sectionRect.bottom >= triggerPoint) {
+          startRamAnimation();
+        }
+      };
+
+      const scheduleRamAnimationStartCheck = () => {
+        if (startCheckFrame) {
+          return;
+        }
+
+        startCheckFrame = window.requestAnimationFrame(() => {
+          startCheckFrame = null;
+          checkRamAnimationStart();
+        });
+      };
+
       if (motionPath && ramHead) {
         placeRamOnPath(0);
-        window.requestAnimationFrame(animateRam);
+        window.addEventListener("scroll", scheduleRamAnimationStartCheck, { passive: true });
+        window.addEventListener("resize", scheduleRamAnimationStartCheck);
+        window.addEventListener("load", scheduleRamAnimationStartCheck);
+        window.addEventListener("pageshow", scheduleRamAnimationStartCheck);
+        window.requestAnimationFrame(checkRamAnimationStart);
       }
     </script>
   </body>

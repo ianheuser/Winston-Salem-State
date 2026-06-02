@@ -42,18 +42,18 @@ body.animation-proof-page {
 
 .path-proof-section {
   display: grid;
-  min-height: 100svh;
   padding: 24px;
   place-items: center;
   background: var(--black);
 }
 
 .path-proof-svg {
-  display: block;
-  width: auto;
-  max-width: calc(100vw - 48px);
-  height: min(92svh, 1120px);
-  overflow: visible;
+    display: block;
+    max-width: 700px;
+    width: 65vw;
+    overflow: visible;
+    position: relative;
+    right: -36px;
 }
 
 .path-proof-line {

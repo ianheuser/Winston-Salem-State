@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Winston-Salem State University Graduate College</title>
+    <meta
+      name="description"
+      content="Explore graduate degrees, certificates, and doctoral programs at Winston-Salem State University."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Open+Sans:wght@400;600;700;800&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Winston-Salem State University Graduate College home">
+        <img src="assets/logo.png" class="main-logo" />
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="program.html">Programs</a>
+        <a href="#financial-aid">Financial Aid</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="program.html">Programs</a>
+      <a href="#financial-aid">Financial Aid</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+      <section class="flex column landing-hero">
+        <div class="hero-art" aria-hidden="true"></div>
+        <h1 class="hero-title">Be the Ram in the Room</h1>
+      </section>
+
+      <section class="flex column program-finder" id="programs">
+        <h2>Find the program<br />that prepares you to lead</h2>
+
+        <div class="program-type-grid" aria-label="Program types">
+          <div class="program-type">
+            <a class="neon-button gold" href="program.html">
+              Masters Degrees
+            </a>
+            <p>Build specialized skills that fit your goals</p>
+          </div>
+          <div class="program-type">
+            <a class="neon-button blue" href="program.html">
+              Certificates
+            </a>
+            <p>Advance your expertise to lead in your field</p>
+          </div>
+          <div class="program-type">
+            <a class="neon-button green" href="program.html">
+              Doctoral Degrees
+            </a>
+            <p>Earn the highest credential in your profession</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex inquiry-section inquiry-section-landing" id="contact">
+        <div class="campus-collage" aria-hidden="true">
+          <img class="campus-left" src="assets/landing-campus-left.jpg" alt="" />
+          <!-- <img class="campus-right" src="assets/landing-campus-right.jpg" alt="" /> -->
+        </div>
+
+        <div class="photo-card photo-card-red">
+          <div class="red-line" ></div>
+          <img src="assets/landing-form-photo.jpg" alt="Graduate student meeting with an advisor" />
+        </div>
+
+        <div class="inquiry-copy flex column">
+          <h2>Ready to step into the room?</h2>
+          <p>Tell us a little about yourself and our graduate team can help you plan your next move today.</p>
+
+          <form class="lead-form" data-success-message="Thanks. Our graduate team will be in touch soon.">
+            <label>
+              <span>Name <b>*</b></span>
+              <input name="name" autocomplete="name" required />
+            </label>
+            <label>
+              <span>Email <b>*</b></span>
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Program of Interest <b>*</b></span>
+              <select name="program" required>
+                <option>Undecided</option>
+                <option>Master of Science in Computer Science and Technology</option>
+                <option>Masters Degrees</option>
+                <option>Certificates</option>
+                <option>Doctoral Degrees</option>
+              </select>
+            </label>
+            <button class="outline-button" type="submit">Submit</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="flex column aid-band" id="financial-aid">
+        <h2>Affordable. Attainable. Achievable.</h2>
+        <p>Through scholarships, grants, and financial aid, we make pursuing your graduate degree a reality.</p>
+      </section>
+
+     
+        
+    <section class="flex column path-proof-section power-section" id="ram-path-proof" aria-label="Ram path animation proof">
+      
+      <h2 class="neon-on-scroll">The <span>Power</span> of a<br />WSSU Graduate Degree</h2>
+      
+      <svg
+        class="path-proof-svg"
+        viewBox="-120 -140 1263 2380"
+        role="img"
+        aria-label="Ram head moving down the red vector path"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <filter id="path-proof-glow" x="-20%" y="-10%" width="140%" height="120%">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="4.65" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <path
+          id="js-motion-path"
+          class="path-proof-line"
+          d="M992.615 -44C1007.8 17.9271 1016.26 326.748 971.523 430.072C827.811 762.038 194.708 563.048 194.708 858.925C194.708 1154.8 1016.9 1037.08 1000.65 1324.69C987.38 1559.71 276.999 1567.56 73.7895 1815.42C73.7895 1815.42 -52.1917 1942.53 73.7895 2103"
+          fill="none"
+          stroke="#da1f33"
+          stroke-miterlimit="10"
+          stroke-width="17"
+        />
+
+        <text class="path-proof-bullet" data-progress="0.09" x="720" y="290" text-anchor="middle">
+          <tspan x="450">Proven track record</tspan>
+          <tspan x="450" dy="70">for career mobility</tspan>
+        </text>
+        <text class="path-proof-bullet" data-progress="0.18" x="245" y="600" text-anchor="middle">
+          <tspan x="0">Higher earning</tspan>
+          <tspan x="0" dy="70">potential</tspan>
+        </text>
+        <text class="path-proof-bullet" data-progress="0.35" x="760" y="850" text-anchor="middle">
+          <tspan x="760">Direct access</tspan>
+          <tspan x="760" dy="70">to employers</tspan>
+          <tspan x="760" dy="70">in your field</tspan>
+        </text>
+        <text class="path-proof-bullet" data-progress="0.54" x="780" y="1350" text-anchor="middle">
+          <tspan x="350">Affordable tuition</tspan>
+        </text>
+        <text class="path-proof-bullet" data-progress="0.84" x="245" y="1900" text-anchor="middle">
+          <tspan x="500">Personalized support</tspan>
+          <tspan x="500" dy="70">from faculty &amp; staff</tspan>
+        </text>
+
+        <image
+          id="js-path-ram"
+          class="path-proof-ram"
+          href="assets/ram-head.png"
+          x="-120"
+          y="-109"
+          width="240"
+          height="218"
+        />
+      </svg>
+    </section>
+
+    <script>
+      const motionPath = document.querySelector("#js-motion-path");
+      const ramHead = document.querySelector("#js-path-ram");
+      const pathBullets = Array.from(document.querySelectorAll(".path-proof-bullet"));
+      const duration = 8000;
+      let animationStart = null;
+      let animationStarted = false;
+      let startCheckFrame = null;
+
+      const updateBulletLights = (progress) => {
+        pathBullets.forEach((bullet) => {
+          const lightProgress = Number(bullet.dataset.progress);
+
+          bullet.classList.toggle("is-lit", progress >= lightProgress);
+        });
+      };
+
+      const placeRamOnPath = (progress) => {
+        const pathLength = motionPath.getTotalLength();
+        const point = motionPath.getPointAtLength(pathLength * progress);
+
+        ramHead.setAttribute("transform", `translate(${point.x} ${point.y})`);
+        updateBulletLights(progress);
+      };
+
+      const animateRam = (timestamp) => {
+        if (animationStart === null) {
+          animationStart = timestamp;
+        }
+
+        const progress = ((timestamp - animationStart) % duration) / duration;
+
+        placeRamOnPath(progress);
+        window.requestAnimationFrame(animateRam);
+      };
+
+      const startRamAnimation = () => {
+        if (animationStarted) {
+          return;
+        }
+
+        animationStarted = true;
+        animationStart = null;
+        window.requestAnimationFrame(animateRam);
+      };
+
+      const checkRamAnimationStart = () => {
+        if (animationStarted) {
+          return;
+        }
+
+        const section = document.querySelector(".path-proof-section");
+
+        if (!section) {
+          return;
+        }
+
+        const sectionRect = section.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 0.5;
+
+        if (sectionRect.top <= triggerPoint && sectionRect.bottom >= triggerPoint) {
+          startRamAnimation();
+        }
+      };
+
+      const scheduleRamAnimationStartCheck = () => {
+        if (startCheckFrame) {
+          return;
+        }
+
+        startCheckFrame = window.requestAnimationFrame(() => {
+          startCheckFrame = null;
+          checkRamAnimationStart();
+        });
+      };
+
+      if (motionPath && ramHead) {
+        placeRamOnPath(0);
+        window.addEventListener("scroll", scheduleRamAnimationStartCheck, { passive: true });
+        window.addEventListener("resize", scheduleRamAnimationStartCheck);
+        window.addEventListener("load", scheduleRamAnimationStartCheck);
+        window.addEventListener("pageshow", scheduleRamAnimationStartCheck);
+        window.requestAnimationFrame(checkRamAnimationStart);
+      }
+    </script>
+
+      <section class="flex dean-quote">
+        <img src="assets/dean-boykin.jpg" alt="Montrale Boykin, Dean, Graduate College" />
+        <blockquote>
+          <p>
+            At WSSU, you'll be prepared and ready to lead in any room you enter. If you're looking for real economic
+            opportunity, social mobility, and a community of students and educators driving change, this is your
+            university!
+          </p>
+          <cite>Montrale Boykin | Dean, Graduate College</cite>
+        </blockquote>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/centered-logo.png" alt="Winston-Salem State University" />
+      </div>
+      <address>
+        601 S. Martin Luther King Jr. Drive<br />
+        Winston-Salem, NC 27110 <span>|</span> 336-750-2000
+      </address>
+      <div class="social-links" aria-label="Social links">
+        <a href="#" aria-label="Facebook"><img src="assets/facebook.png" alt="Facebook" /></a>
+        <a href="#" aria-label="Instagram"><img src="assets/instagram.png" alt="instagram Logo" /></a>
+        <a href="#" aria-label="YouTube"><img src="assets/youtube.png" alt="You Tube Logo" /></a>
+        <a href="#" aria-label="LinkedIn"><img src="assets/linkedin.png" alt="LinkedIn Logo" /></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
