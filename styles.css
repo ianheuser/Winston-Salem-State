@@ -63,14 +63,11 @@ body.animation-proof-page {
 .path-proof-bullet {
   fill: var(--white);
   opacity: 0.58;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: "Tilt Neon", Arial, sans-serif;
   font-size: 64px;
   font-weight: 600;
   letter-spacing: 0;
   paint-order: stroke fill;
-  stroke: rgba(0, 0, 0, 0.5);
-  stroke-linejoin: round;
-  stroke-width: 8px;
   transition:
     filter 220ms ease,
     opacity 220ms ease;
@@ -80,13 +77,13 @@ body.animation-proof-page {
   opacity: 1;
   filter:
     drop-shadow(0 0 9px rgba(255, 255, 255, 0.9))
-    drop-shadow(0 0 18px rgba(213, 35, 52, 0.9));
+    drop-shadow(0 0 18px var(--red));
 }
 
 .path-proof-ram {
   filter:
     drop-shadow(0 0 8px rgba(255, 255, 255, 0.34))
-    drop-shadow(0 0 16px rgba(213, 35, 52, 0.9));
+    drop-shadow(0 0 16px rgba(255, 198, 204, 0.9));
 }
 
 img {
