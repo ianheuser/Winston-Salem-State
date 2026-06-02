@@ -48,13 +48,13 @@ body.animation-proof-page {
 }
 
 .path-proof-svg {
-    display: block;
-    max-width: 700px;
-    width: 65vw;
-    overflow: visible;
-    position: relative;
-    right: -60px;
-    top: -55px;
+  display: block;
+  max-width: 600px;
+  width: 67vw;
+  overflow: visible;
+  position: relative;
+  right: -75px;
+  top: -55px;
 }
 
 .path-proof-line {
@@ -1373,7 +1373,15 @@ select {
   :root {
     --header-height: 122px;
   }
-
+  .path-proof-svg {
+    display: block;
+    max-width: 700px;
+    width: 67vw;
+    overflow: visible;
+    position: relative;
+    right: -40px;
+    top: -55px;
+}
   .innovators-section .photo-card {
     bottom: -40vw;
     position:absolute;
