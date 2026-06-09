@@ -102,7 +102,7 @@ if ("IntersectionObserver" in window) {
 }
 
 window.addEventListener("scroll", scheduleNeonViewportCheck, { passive: true });
-window.addEventListener("resize", scheduleNeonViewportCheck);
+// window.addEventListener("resize", scheduleNeonViewportCheck);
 window.addEventListener("orientationchange", scheduleNeonViewportCheck);
 window.addEventListener("load", scheduleNeonViewportCheck);
 window.addEventListener("pageshow", scheduleNeonViewportCheck);
@@ -118,12 +118,12 @@ document.querySelectorAll("img").forEach((image) => {
     image.addEventListener("load", scheduleNeonViewportCheck, { once: true });
   }
 });
-
+/*
 if ("ResizeObserver" in window) {
   const neonLayoutObserver = new ResizeObserver(scheduleNeonViewportCheck);
   neonLayoutObserver.observe(document.body);
 }
-
+*/
 // Only wire up the mobile menu if the current page includes both menu elements.
 if (menuButton && mobileNav) {
   // Keep this breakpoint in sync with the CSS rule that hides the burger menu.

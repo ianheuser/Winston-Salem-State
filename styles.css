@@ -689,7 +689,7 @@ p.white {
   background: var(--red-bright);
   color: var(--white);
   margin-top: -100px;
-  z-index: 100;
+  z-index: 49;
 }
 
 .dean-quote img {
