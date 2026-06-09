@@ -1063,10 +1063,11 @@ p.white {
 }
 
 .neon-on-scroll.neon-lit {
+  opacity: 1;
+  filter: brightness(1);
   text-shadow:
-    0 0 4px currentColor,
-    0 0 12px currentColor,
-    0 0 26px currentColor;
+    0 0 0px currentColor,
+    0 0 5px currentColor;
   animation: neon-flicker 1.65s linear 1 both;
 }
 
@@ -1103,6 +1104,12 @@ p.white {
     inset 0 0 8px currentColor;
 }
 
+
+/* 
+  This is the flicker that is used when the user rolls over a button, 
+  like the submit button on forms
+*/
+
 @keyframes neon-control-flicker {
   0%,
   9%,
@@ -1131,6 +1138,11 @@ p.white {
   }
 }
 
+
+/* 
+  This is the flicker on the headings
+*/
+
 @keyframes neon-flicker {
   0%,
   9%,
@@ -1138,11 +1150,10 @@ p.white {
   19%,
   24%,
   54% {
-    opacity: 0.48;
-    filter: brightness(0.58);
+    opacity: .5;
     text-shadow:
-      0 0 1px currentColor,
-      0 0 4px currentColor;
+      0 0 10px currentColor,
+      0 0 20px currentColor;
   }
 
   10%,
@@ -1155,7 +1166,6 @@ p.white {
   57%,
   100% {
     opacity: 1;
-    filter: brightness(1);
     text-shadow:
       0 0 0px currentColor,
       0 0 5px currentColor;

@@ -77,6 +77,30 @@ const scheduleNeonViewportCheck = () => {
   });
 };
 
+let neonResizeTimer;
+const restartAllNeonFlickers = () => {
+  neonTargets.forEach((target) => {
+    lightNeonTarget(target);
+    target.style.animation = "none";
+  });
+
+  // Force the browser to commit the cleared animation before restoring it.
+  void document.body.offsetHeight;
+
+  neonTargets.forEach((target) => {
+    target.style.animation = "";
+  });
+};
+
+const scheduleNeonResizeFlicker = () => {
+  window.clearTimeout(neonResizeTimer);
+
+  neonResizeTimer = window.setTimeout(() => {
+    neonResizeTimer = null;
+    window.requestAnimationFrame(restartAllNeonFlickers);
+  }, 160);
+};
+
 if ("IntersectionObserver" in window) {
   neonObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -102,7 +126,7 @@ if ("IntersectionObserver" in window) {
 }
 
 window.addEventListener("scroll", scheduleNeonViewportCheck, { passive: true });
-// window.addEventListener("resize", scheduleNeonViewportCheck);
+window.addEventListener("resize", scheduleNeonResizeFlicker);
 window.addEventListener("orientationchange", scheduleNeonViewportCheck);
 window.addEventListener("load", scheduleNeonViewportCheck);
 window.addEventListener("pageshow", scheduleNeonViewportCheck);
