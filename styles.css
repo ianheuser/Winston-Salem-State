@@ -55,6 +55,7 @@ h3 {
 p {
   font-size: clamp(14px, 2.8vw, 21px);
   margin: 0px;
+  width: clamp(75%,75%,600px);
 }
 
 .red-bright {
@@ -94,7 +95,7 @@ body.animation-proof-page {
 }
 
 .path-proof-section {
-  display: grid;
+  display: none;
   padding: 24px;
   place-items: center;
   background: var(--black);
@@ -572,11 +573,6 @@ p.white {
   align-items: center;
 }
 
-.inquiry-copy > p {
-  max-width: 90%;
-  margin: 0 auto 44px;
-}
-
 .lead-form {
   display: flex;
   flex-direction: column;
@@ -676,11 +672,14 @@ p.white {
   margin: 0;
 }
 
-.power-section {
-  overflow: hidden;
-  padding: 100px 24px 50px;
-  background-color: var(--black);
-  color: var(--white);
+
+
+.inquiry-copy > p {
+  width: 100%;
+}
+
+.lead-room-section p {
+  margin-bottom: 50px;
 }
 
 .dean-quote {
@@ -846,6 +845,14 @@ p.white {
   flex-direction: column;
 }
 
+.power-section {
+  display: none;
+  overflow: hidden;
+  padding: 100px 24px 50px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
 .program-intro {
   padding: 60px 0 68px;
   background: var(--red);
@@ -973,7 +980,7 @@ p.white {
   flex: 1 1 260px;
 }
 
-.stats-grid strong {
+.stats {
   display: block;
   color: var(--gold);
   font-family: "Tilt Neon", sans-serif;
@@ -988,10 +995,6 @@ p.white {
   padding: 50px 0 0;
   background: linear-gradient(180deg, var(--gold) 0%, var(--gold) 54%, rgba(215, 168, 14, 0.36) 74%, rgba(215, 168, 14, 0) 100%);
   text-align: center;
-}
-
-.lead-room-section p {
-  max-width: 725px;
 }
 
 .lead-room-section img {
@@ -1020,11 +1023,6 @@ p.white {
 .affordability-section {
   background: var(--black);
   color: var(--white);
-}
-
-.affordability-section p {
-  max-width: 680px;
-  margin: 0 auto;
 }
 
 .button-line {
@@ -1299,7 +1297,6 @@ p.white {
     gap: 24px;
   }
 
-
 }
 
 @media (max-width: 720px) {
@@ -1496,10 +1493,6 @@ p.white {
     padding: 17px 0 23px;
   }
 
-  .program-intro p {
-    max-width: 70%;
-  }
-
   .inquiry-section.program {
     padding-top: 32px;
   }
@@ -1552,7 +1545,7 @@ p.white {
     flex-basis: 0;
   }
 
-  .stats-grid strong {
+  .stats {
     font-size: 30px;
   }
 
@@ -1561,16 +1554,11 @@ p.white {
   }
 
   .lead-room-section p {
-    max-width: 316px;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
   }
 
   .affordability-section {
     padding: 25px 0 30px;
-  }
-
-  .affordability-section p {
-    max-width: 270px;
   }
 
 }
