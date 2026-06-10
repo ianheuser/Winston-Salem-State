@@ -687,7 +687,8 @@ p.white {
   padding: 92px 24px;
   background: var(--red-bright);
   color: var(--white);
-  margin-top: -100px;
+  margin-top: 0px;
+  /* margin-top: -100px; */
   z-index: 49;
 }
 
