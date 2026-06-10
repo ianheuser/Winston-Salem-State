@@ -676,13 +676,6 @@ p.white {
   margin: 0;
 }
 
-.power-section {
-  overflow: hidden;
-  padding: 100px 24px 50px;
-  background-color: var(--black);
-  color: var(--white);
-}
-
 .dean-quote {
   gap: clamp(64px, 9vw, 130px);
   padding: 92px 24px;
@@ -841,6 +834,15 @@ p.white {
   display: flex;
   flex-direction: row;
 }
+
+.power-section {
+  display: none;
+  overflow: hidden;
+  padding: 100px 24px 50px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
 
 .flex.column {
   flex-direction: column;
