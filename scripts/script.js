@@ -28,7 +28,7 @@ const lightNeonTarget = (target) => {
 
 // The scroll fallback catches fast scrolls that pass over short neon elements between observer checks.
 const revealNeonTargetsInRange = (rangeTop, rangeBottom) => {
-  const viewportBuffer = 12;
+  const viewportBuffer = -200;
 
   neonTargets.forEach((target) => {
     if (target.classList.contains("neon-lit")) {
@@ -101,7 +101,7 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      rootMargin: "0px",
+      rootMargin: "0px 0px -20% 0px",
       threshold: 0,
     },
   );

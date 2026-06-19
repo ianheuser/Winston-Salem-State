@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Master of Science in Computer Science and Technology | WSSU</title>
+    <title>Master of Science in Computer Science and Information Technology | WSSU</title>
     <meta
       name="description"
-      content="Explore the Master of Science in Computer Science and Technology program at Winston-Salem State University."
+      content="Explore the Master of Science in Computer Science and Information Technology program at Winston-Salem State University."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,12 +14,12 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Open+Sans:wght@400;600;700;800&family=Tilt+Neon&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
    <header class="site-header">
       <a class="brand" href="index.html" aria-label="Winston-Salem State University Graduate College home">
-        <img src="images/new-logo.png" class="main-logo" />
+        <img src="../images/new-logo.png" class="main-logo" />
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
@@ -47,10 +47,11 @@
         <div class="program-hero-content">
           <p class="program-code">MCST</p>
           <h1 class="gold">Master<br />of Science</h1>
-          <h3>in Computer Science and Technology</h3>
+          <h3>in Computer Science<br /> and Information <br />Technology</h3>
         </div>
       </section>
 
+      <!-- 
       <section class="flex column program-intro">
         <h2>5-Year (4+1) BS to MS MCST</h2>
         <p>
@@ -58,16 +59,17 @@
           and tuition.
         </p>
       </section>
+      -->
 
       <section class="flex inquiry-section" id="contact">
         <div class="campus-collage" aria-hidden="true">
-          <img class="left" src="images/landing-campus-left.jpg" alt="" />
-          <!-- <img class="right" src="images/landing-campus-right.jpg" alt="" /> -->
+          <img class="left" src="../images/landing-campus-left.jpg" alt="" />
+          <!-- <img class="right" src="../images/landing-campus-right.jpg" alt="" /> -->
         </div>
 
         <div class="photo-card red">
           <div class="red-line" ></div>
-          <img src="images/MCST_lead_form_image.jpg" alt="Graduate student meeting with an advisor" />
+          <img src="../images/MCST_lead_form_image.jpg" alt="Graduate student meeting with an advisor" />
         </div>
 
         <div class="inquiry-copy flex column">
@@ -86,11 +88,12 @@
             <label>
               <span>Program of Interest <b>*</b></span>
               <select name="program" required>
-                <option>Undecided</option>
-                <option>Master of Science in Computer Science and Technology</option>
-                <option>Masters Degrees</option>
-                <option>Certificates</option>
-                <option>Doctoral Degrees</option>
+                <option value="">Select...</option>
+                <option value="undecided">Undecided</option>
+                <option value="mcst">Master of Science in Computer Science and Information Technology</option>
+                <option value="masters">Masters Degrees</option>
+                <option value="certificates">Certificates</option>
+                <option value="doctoral">Doctoral Degrees</option>
               </select>
             </label>
             <button class="outline-button" type="submit">Submit</button>
@@ -105,7 +108,8 @@
             Innovators.
             <br />
             Problem-Solvers.
-            <br />Visionaries.
+            <br />
+            Visionaries.
           </h2>
           <ul>
             <li>Evening classes</li>
@@ -116,13 +120,13 @@
         </div>
 
         <div class="photo-card red">
-          <img src="images/program-community.jpg" alt="Students collaborating in a lab" />
+          <img src="../images/program-community.jpg" alt="Students collaborating in a lab" />
         </div>
       </section>
 
       <section class="flex career-paths">
         <div class="section-inner">
-          <h2 class="gold">One Degree. Multiple Career Paths.</h2>
+          <h2 class="gold">One Degree.<br /> Multiple Career Paths.</h2>
           <ul>
             <li>Cybersecurity Manager</li>
             <li>Data Scientist</li>
@@ -157,7 +161,7 @@
           </p>
        
         <div class="image-contain">
-          <img src="images/program-lead.jpg" alt="Graduate student working at a laptop" />
+          <img src="../images/MCST_Real_World.jpg" alt="Graduate student working at a laptop" />
         </div>
         </section>
 
@@ -171,9 +175,9 @@
       <section class="flex column serve-section">
         
           <h2 class="red">Depart to Serve</h2>
-          <h3>The Experts &amp; Support Every Community Deserves.</h3>
+          <h4>The Experts &amp; Support Every Community Deserves.</h4>
           <p>
-            Join WSSU's "Ramily" network of 24,000 alumni and build lasting professional connection through corporate partnerships and the Association for Computing Machinery.
+            Join WSSU's "Ramily" network of 24,000 alumni and build lasting professional connections through corporate partnerships and the Association for Computing Machinery.
           </p>
          
           <a class="outline-button gold line" href="#contact">Let's Find a Path That Fits You</a>
@@ -184,20 +188,20 @@
     
     <footer class="site-footer">
       <div class="footer-brand">
-        <img src="images/centered-logo.png" alt="Winston-Salem State University" />
+        <img src="../images/centered-logo.png" alt="Winston-Salem State University" />
       </div>
       <address>
         601 S. Martin Luther King Jr. Drive<br />
         Winston-Salem, NC 27110 <span>|</span> 336-750-2000
       </address>
       <div class="social-links" aria-label="Social links">
-        <a href="https://www.facebook.com/WSSU1892" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook Logo" /></a>
-        <a href="http://www.instagram.com/wssu1892" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram Logo" /></a>
-        <a href="https://www.youtube.com/wssu1892" aria-label="YouTube"><img src="images/youtube.png" alt="You Tube Logo" /></a>
-        <a href="https://www.linkedin.com/company/winston-salem-state-university/" aria-label="LinkedIn"><img src="images/linked-in.png" alt="LinkedIn Logo" /></a>
+        <a href="https://www.facebook.com/WSSU1892" aria-label="Facebook"><img src="../images/facebook.png" alt="Facebook Logo" /></a>
+        <a href="http://www.instagram.com/wssu1892" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram Logo" /></a>
+        <a href="https://www.youtube.com/wssu1892" aria-label="YouTube"><img src="../images/youtube.png" alt="You Tube Logo" /></a>
+        <a href="https://www.linkedin.com/company/winston-salem-state-university/" aria-label="LinkedIn"><img src="../images/linked-in.png" alt="LinkedIn Logo" /></a>
       </div>
     </footer>
 
-    <script src="scripts/script.js"></script>
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
