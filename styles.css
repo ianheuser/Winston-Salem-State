@@ -48,7 +48,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(15px, 3vw, 36px);
+  font-size: clamp(12px, 3vw, 36px);
   text-transform: uppercase;
   margin: 0px;
 }
@@ -519,13 +519,13 @@ z
 .campus-collage img {
   position: absolute;
   object-fit: cover;
+  opacity: .35;
 }
 
 .campus-collage .left {
   left: max(-175px, -12vw);
   top: 3px;
   width: clamp(260px, 42vw, 732px);
-  opacity: 0.8;
 }
 
 .inquiry-section > .photo-card,
@@ -1411,11 +1411,6 @@ z
 
   .inquiry-section.program .inquiry-copy {
     order: 1;
-  }
-
-  .campus-collage .left,
-  .campus-collage .right {
-    opacity: 0.22;
   }
 
   .lead-form {
