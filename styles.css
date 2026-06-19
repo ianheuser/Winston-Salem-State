@@ -44,7 +44,7 @@ h1 {
 h2 {
   font-size: clamp(24px, 4.8vw, 48px);
   margin-top: 0px;
-  max-width: 95%;
+  max-width: 95vw;
 }
 
 h3 {
