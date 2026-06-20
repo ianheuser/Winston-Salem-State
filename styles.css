@@ -195,6 +195,7 @@ select {
 
 .serve-section p {
   margin-bottom: 2vw;
+  width: clamp(350px,85%,590px);
 }
 
 :where(section) {
@@ -1116,10 +1117,6 @@ z
   box-shadow:
     0 0 10px currentColor,
     inset 0 0 8px currentColor;
-}
-
-.serve-section p {
-  width: clamp(350px,85%,590px)
 }
 
 /* 
